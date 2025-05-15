@@ -1,0 +1,210 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #f5f7fa, #eaeef3);
+  color: #333;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.container {
+  max-width: 720px;
+  width: 100%;
+  margin: auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.4s ease;
+}
+
+.container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Styles */
+h1 {
+  font-size: 36px;
+  color: #0056d6;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Status Alerts */
+.status {
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.status.connected {
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 2px solid #a5d6a7;
+  box-shadow: inset 0 0 10px rgba(27, 94, 32, 0.1);
+}
+
+.status.disconnected {
+  background: #ffebee;
+  color: #b71c1c;
+  border: 2px solid #ef9a9a;
+  box-shadow: inset 0 0 10px rgba(183, 28, 28, 0.1);
+}
+
+/* Data Grid */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Data Point */
+.data-point {
+  background: #f9fafa;
+  border: 1px solid #dfe6ec;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.data-point:hover {
+  background: #eef2f5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.data-point strong {
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+.data-point span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+/* Dynamic Bar Animation */
+.data-point::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.data-point:hover::before {
+  transform: scaleX(1);
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .data-point {
+    padding: 15px;
+  }
+}
