@@ -1,8 +1,3 @@
-# IOT-Smart-Noise-Monitoring-System-in-Office
-Sure! Here’s a polished and professional description for your project:
-
----
-
 # IoT Smart Noise Monitoring System in Office
 
 The **IoT Smart Noise Monitoring System** is an innovative solution designed to maintain optimal noise levels in office environments. Utilizing IoT technology, the system continuously monitors ambient noise using connected sensors and ensures a productive workspace by alerting users when noise exceeds acceptable thresholds.
